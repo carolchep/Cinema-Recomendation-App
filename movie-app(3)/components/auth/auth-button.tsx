@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { LogIn, LogOut, User, Heart, Settings } from "lucide-react"
 import Link from "next/link"
+import { GradientMenuIcon } from "@/components/ui/gradient-menu-icon"
 
 export function AuthButton() {
   const { data: session, status } = useSession()
@@ -47,7 +48,7 @@ export function AuthButton() {
           <Button variant="ghost" size="icon" className="rounded-full">
             <Avatar className="h-8 w-8">
               <AvatarImage src={session.user.image || ""} alt={session.user.name || "User"} />
-              <AvatarFallback>
+              <AvatarFallback className="bg-gradient-to-r from-[#19A1BE] to-[#7D4192] text-white">
                 {session.user.name
                   ? session.user.name
                       .split(" ")
@@ -96,16 +97,21 @@ export function AuthButton() {
   }
 
   return (
-    <Button onClick={handleSignIn} disabled={isLoading}>
+    <Button 
+      onClick={handleSignIn} 
+      disabled={isLoading}
+      variant="ghost"
+      className="bg-gradient-to-r from-[#19A1BE] to-[#7D4192] text-white hover:opacity-90 transition-opacity flex items-center gap-2 px-4"
+    >
       {isLoading ? (
         <>
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-r-transparent mr-2" />
-          Signing in...
+          <span className="h-4 w-4 animate-spin rounded-full border-2 border-r-transparent" />
+          <span>Signing in...</span>
         </>
       ) : (
         <>
-          <LogIn className="mr-2 h-4 w-4" />
-          Sign in
+          <GradientMenuIcon className="h-5 w-5" />
+          <span>Sign in</span>
         </>
       )}
     </Button>

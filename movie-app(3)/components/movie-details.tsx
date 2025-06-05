@@ -87,12 +87,13 @@ export function MovieDetails({ movie }: MovieDetailsProps) {
             </div>
 
             <div>
-              <h2 className="text-xl font-semibold mb-2">Overview</h2>
+              <h2 className="text-xl font-semibold mb-2 text-yellow-500">Overview</h2>
               <p className="text-muted-foreground">{movie.overview}</p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Button>Watch Trailer</Button>
+            <div className="flex flex-wrap gap-3 ">
+              <Button className="bg-gradient-to-r from-[#19A1BE] to-[#7D4192] text-white" >Watch Trailer</Button>
+              
               <Button variant="outline">Add to Watchlist</Button>
             </div>
           </div>

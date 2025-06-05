@@ -72,7 +72,7 @@ export function MovieHero() {
           {movie.overview.length > 150 ? `${movie.overview.substring(0, 150)}...` : movie.overview}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Button asChild>
+          <Button asChild className="bg-gradient-to-r from-[#19A1BE] to-[#7D4192] text-white hover:opacity-90 transition-opacity">
             <Link href={`/movies/${movie.id}`}>
               <Play className="mr-2 h-4 w-4" />
               Watch Now
@@ -83,7 +83,7 @@ export function MovieHero() {
           </Button>
         </div>
         <div className="mt-8 flex space-x-2">
-          {movies.map((_, i) => (
+          {movies.map((movie: any, i: number) => (
             <button
               key={i}
               className={`h-2 w-2 rounded-full ${i === currentIndex ? "bg-primary" : "bg-muted"}`}

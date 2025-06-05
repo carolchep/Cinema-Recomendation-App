@@ -9,11 +9,13 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <MovieHero />
-        <div className="container px-4 py-6 md:px-6 md:py-12">
-          <MovieSection title="Featured Movies" endpoint="/api/movies/featured" />
-          <MovieSection title="New Arrivals" endpoint="/api/movies/new" className="mt-12" />
-          <MovieSection title="Exclusive Videos" endpoint="/api/movies/exclusive" className="mt-12" variant="video" />
-          <MovieSection title="Featured Casts" endpoint="/api/movies/casts" className="mt-12" variant="cast" />
+        <div className="w-full px-8 py-12 md:px-16 lg:px-24">
+          <div className="space-y-16">
+            <MovieSection title="Featured Movies" endpoint="/api/movies/featured" />
+            <MovieSection title="New Arrivals" endpoint="/api/movies/new" />
+            <MovieSection title="Exclusive Videos" endpoint="/api/movies/exclusive" variant="video" />
+            <MovieSection title="Featured Casts" endpoint="/api/movies/casts" variant="cast" />
+          </div>
         </div>
       </main>
       <SiteFooter />
