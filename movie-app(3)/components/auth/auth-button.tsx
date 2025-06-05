@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { LogIn, LogOut, User, Heart, Settings } from "lucide-react"
+import {  LogOut, User, Heart, Settings } from "lucide-react"
 import Link from "next/link"
 import { GradientMenuIcon } from "@/components/ui/gradient-menu-icon"
 

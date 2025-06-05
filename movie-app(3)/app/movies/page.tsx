@@ -8,11 +8,10 @@ import { Film } from "lucide-react"
 
 export default function MoviesPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background ">
       <SiteHeader />
       <main className="flex-1">
         <div className="container px-4 py-6 md:px-6 md:py-12">
-          {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
             <div className="flex items-center gap-3">
               <Film className="h-8 w-8" />
@@ -26,8 +25,7 @@ export default function MoviesPage() {
             </div>
           </div>
 
-          {/* Movie Sections */}
-          <div className="space-y-12">
+          <div className="space-y-12 px-8 py-12 w-full">
             <Suspense fallback={<MovieSectionSkeleton title="Trending Now" />}>
               <MovieSection title="Trending Now" endpoint="/api/movies/featured" />
             </Suspense>
@@ -57,7 +55,7 @@ export default function MoviesPage() {
 
 function MovieSectionSkeleton({ title }: { title: string }) {
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 w-full">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold">{title}</h2>
         <div className="flex items-center gap-2">

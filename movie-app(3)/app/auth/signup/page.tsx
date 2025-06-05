@@ -28,8 +28,6 @@ export default function SignUpPage() {
     setError("")
 
     try {
-      // In a real app, you would register the user here
-      // For this demo, we'll just redirect to sign in
       router.push("/auth/signin")
     } catch (error) {
       console.error("Sign up error:", error)
